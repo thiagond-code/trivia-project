@@ -15,7 +15,7 @@ export const listLinks: Links = [
     },
     {
         label: 'Trivia & Facts',
-        url: '/',
+        url: '/facts',
     },
     {
         label: 'Challenge Yourself',
@@ -42,14 +42,22 @@ export const renderLinks = listLinks.map((link) => {
 export default function Navbar() {
     return (
         <header>
-            <h1>ProWorld</h1>
+            <Link href="/">
+                <h1>ProWorld</h1>
+            </Link>
             <nav>
                 <ul>
                    {renderLinks}
                 </ul>
             </nav>
-            <button>Sign in</button>
-            <button>Sign up</button>
+            <div>
+                <Link href="/">
+                    <button>Sign in</button>
+                </Link>
+                <Link href="/">
+                    <button>Sign up</button>
+                </Link>
+            </div>
         </header>
     )
 }
