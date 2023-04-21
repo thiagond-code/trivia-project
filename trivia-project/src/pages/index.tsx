@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 export const inter = Inter({ subsets: ['latin'] })
 
-export default function Home() {
+function Hero() {
   return (
     <main className='container mx-auto'>
       <section className='flex flex-col mx-8 my-16 xl:mx-16 2xl:mx-24'>
@@ -21,6 +21,14 @@ export default function Home() {
       </section>
       <hr />
     </main>
+  )
+}
+
+export default function Home() {
+  return (
+    <>
+      <Hero />
+    </>
   )
 }
 

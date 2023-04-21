@@ -2,12 +2,12 @@ import Link from 'next/link'
 import { Poppins } from 'next/font/google'
 import { inter } from '@/pages/index'
 
-export type Link = {
+type Link = {
     label: string
     url: string
 }
-
-export type Links = Link[]
+ 
+type Links = Link[]
 
 export const listLinks: Links = [
     {
@@ -51,7 +51,7 @@ export default function Navbar() {
                 </Link>
                 <nav className='hidden xl:block text-lg font-semibold'>
                     <ul className={`${poppins.className} flex gap-12`}>
-                    {renderLinks}
+                        {renderLinks}
                     </ul>
                 </nav>
                 <div className='hidden xl:block space-x-8'>
