@@ -45,21 +45,21 @@ export const poppins = Poppins({weight: "500", subsets: ['latin']})
 export default function Navbar() {
     return (
         <header className='container mx-auto'>
-            <div className='flex justify-between items-center m-8 overflow-hidden xl:justify-around'>
+            <div className='flex justify-between items-center m-8 overflow-hidden gap-8 xl:justify-around'>
                 <Link href='/'>
                     <h1 className='text-3xl font-bold hover:text-black/60 delay-100 duration-300 ease-in-out'>ProWorld</h1>
                 </Link>
                 <nav className='hidden xl:block text-lg font-semibold'>
-                    <ul className={`${poppins.className} flex gap-12`}>
+                    <ul className={`${poppins.className} flex gap-8`}>
                         {renderLinks}
                     </ul>
                 </nav>
-                <div className='hidden xl:block space-x-8'>
+                <div className='hidden xl:block space-x-4'>
                     <Link href='/'>
-                        <button>Sign in</button>
+                        <button className='bg-red-600 px-6 py-3 rounded-md text-white font-semibold hover:bg-red-700 delay-200 duration-300 ease-in-out'>Sign up</button>
                     </Link>
                     <Link href='/'>
-                        <button>Sign up</button>
+                        <button className='bg-zinc-300 px-6 py-3 rounded-md text-black/50 font-semibold hover:bg-zinc-400 delay-200 duration-300 ease-in-out'>Sign in</button>
                     </Link>
                 </div>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-12 h-12 cursor-pointer xl:hidden">
