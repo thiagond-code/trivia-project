@@ -1,5 +1,11 @@
 import Image from 'next/image'
 import { renderLinks } from "./Navbar"
+import Facebook from '../../public/facebook.svg'
+import Instagram from '../../public/instagram.svg'
+import Whatsapp from '../../public/whatsapp.svg'
+
+const date = new Date()
+const year = date.getFullYear()
 
 export default function Footer() {
     return (
@@ -14,7 +20,21 @@ export default function Footer() {
             <nav>
                 <ul>{renderLinks}</ul>
             </nav>
-            <Image src='../public/facebook.svg' alt=''/>
+                <ul className='flex justify-center gap-8'>
+                    <li>
+                        <Image src={Facebook} alt='Facebook'/>
+                    </li>
+                    <li>
+                        <Image src={Instagram} alt='Instagram'/>
+                    </li>
+                    <li>
+                        <Image src={Whatsapp} alt='Instagram'/>
+                    </li>
+                </ul>
+                <div className='flex flex-col text-center mt-4 gap-2'>
+                    <span>ProWorld&reg; {year}</span>
+                    <span>Made with ❤️, Thiago</span>
+                </div>
         </footer>
     )
 }
