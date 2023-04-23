@@ -1,4 +1,6 @@
 import Image from 'next/image'
+import Link from 'next/link'
+import { inter } from '@/pages/index'
 import { renderLinks } from "./Navbar"
 import Facebook from '../../public/facebook.svg'
 import Instagram from '../../public/instagram.svg'
@@ -9,29 +11,37 @@ const year = date.getFullYear()
 
 export default function Footer() {
     return (
-        <footer className='container'>
-            <div className='flex flex-col'>
-                <Image src="/../../public/mario.png" width={100} height={100} alt='Logo oficial'/>
-                <p className='text-sm w-1/2'>
+        <footer className='container mx-auto'>
+            <div className='flex flex-col items-center mt-8 gap-4 md:items-start md:ml-8 2xl:ml-[88px]'>
+                <Link href="/">
+                    <h1 className='text-3xl font-bold hover:text-black/60 delay-100 duration-300 ease-in-out'>ProWorld</h1>
+                </Link>
+                <p className='text-sm text-center w-3/4 md:text-left lg:w-1/2'>
                     Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
                     Fuga provident ducimus cum, at nisi eligendi iure officiis nostrum odit impedit delectus quos rerum voluptatibus?
                 </p>
             </div>
             <nav>
-                <ul>{renderLinks}</ul>
+                <ul className='flex flex-col items-center mt-8 mb-12 gap-8 font-semibold md:flex-row md:ml-8 2xl:mx-[88px]'>{renderLinks}</ul>
             </nav>
-                <ul className='flex justify-center gap-8'>
+                <ul className={`${inter.className} flex justify-center gap-8`}>
                     <li>
-                        <Image src={Facebook} alt='Facebook'/>
+                        <Link href='/'>
+                            <Image src={Facebook} alt='Facebook'/>
+                        </Link>
                     </li>
                     <li>
-                        <Image src={Instagram} alt='Instagram'/>
+                        <Link href='/'>
+                            <Image src={Instagram} alt='Instagram' />
+                        </Link>
                     </li>
                     <li>
-                        <Image src={Whatsapp} alt='Instagram'/>
+                        <Link href='/'>
+                            <Image src={Whatsapp} alt='Instagram'/>
+                        </Link>
                     </li>
                 </ul>
-                <div className='flex flex-col text-center mt-4 gap-2'>
+                <div className='flex flex-col text-center mt-8 gap-4'>
                     <span>ProWorld&reg; {year}</span>
                     <span>Made with ❤️, Thiago</span>
                 </div>
