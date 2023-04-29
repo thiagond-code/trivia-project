@@ -44,7 +44,7 @@ export const poppins = Poppins({weight: "500", subsets: ['latin']})
 
 export default function Navbar() {
     return (
-        <header className='container mx-auto' role='navigation'>
+        <header className='container mx-auto'>
             <div className='flex justify-between items-center m-8 overflow-hidden gap-8 xl:justify-around'>
                 <Link href='/'>
                     <h1 className='text-3xl font-bold hover:text-black/60 delay-100 duration-300 ease-in-out'>ProWorld</h1>
