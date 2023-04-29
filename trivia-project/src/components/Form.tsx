@@ -1,9 +1,14 @@
-import { Form as FormikForm, Field, Formik, useFormik } from "formik"
+import { useState } from 'react'
+import Link from 'next/link'
+import { inter } from '@/pages'
+import { Form as FormikForm, Field, Formik, useFormik } from 'formik'
+
 
 type Field = {
     label: string,
     type: string,
-    placeholder?: string
+    placeholder?: string,
+    accessibility?: string
 }
 
 type Fields = Field[]
@@ -11,26 +16,70 @@ type Fields = Field[]
 
 const listFields = [
     {
-        label: 'Name',
+        label: 'First name',
         type: 'text',
-        placeholder: 'Thiago'
+        placeholder: 'John',
+        accessibility: 'firstName'
+    },
+    {
+        label: 'Last name',
+        type: 'text',
+        placeholder: 'Doe',
+        accessibility: 'lastName'
+    },
+    {
+        label: 'Email',
+        type: 'email',
+        placeholder: 'john.acme@example.com',
+        accessibility: 'email'
+    },
+    {
+        label: 'Password',
+        type: 'password',
+        accessibility: 'password'
     }
 ]
 
 
-export default function Form() {
+const renderFields = listFields.map(field => {
     return (
-        <main className="flex flex-col items-center gap-8">
-            <h1 className="text-3xl font-bold">Sign up</h1>
+        <div key={field.label} className='flex flex-col gap-2'>
+            <label className='font-semibold' htmlFor={field.accessibility}>{field.label}</label>
+            <Field 
+                type={field.type}
+                id={field.accessibility}
+                className={`${inter.className} form-input border-slate-300 rounded-md invalid:border-red-600 invalid:ring-red-600`}
+                name={field.accessibility}
+                placeholder={field.placeholder} 
+            />
+        </div>
+    )
+})
+
+export default function Form() {
+
+    const [checked, setChecked] = useState(false)
+
+    const ariaChecked = () => {
+        setChecked(prevState => !prevState)
+    }
+
+    
+
+    return (
+        <main className='flex flex-col items-center gap-8'>
+            <h1 className='text-3xl font-bold'>Sign up</h1>
             <Formik
                 initialValues= {
                     { 
                         name: '', 
                         email: '',
                         phone_number: '',
-                        password: ''
+                        password: '',
+                        agree_terms: false
                     }
                 }
+
                 onSubmit={(values, actions) => {
                     setTimeout(() => {
                         alert(JSON.stringify(values, null, 2))
@@ -38,34 +87,27 @@ export default function Form() {
                     }, 1000)
                 }}
             >
-            <FormikForm className="flex flex-col gap-4">
-                <label htmlFor="firstName">First Name</label>
-                <Field 
-                    id="firstName"
-                    className="p-2 rounded-md border-b ring focus:ring-cyan-400 focus:border-blue-600"
-                    name="firstName" 
-                    placeholder="John" 
-                />
-
-                <label htmlFor="lastName">Last Name</label>
-                <Field 
-                    id="lastName" 
-                    name="lastName" 
-                    placeholder="Doe" 
-                />
-
-                <label htmlFor="email">Email</label>
-                <Field
-                    id="email"
-                    name="email"
-                    placeholder="john@acme.com"
-                    type="email"
-                />
-                <div className="flex justify-center">
-                    <button type="submit">Submit</button>
-                </div>
-            </FormikForm>
-        </Formik>
+                <FormikForm className='flex flex-col gap-8' role='form'>
+                    <fieldset className='flex flex-col gap-4'>
+                        {renderFields}    
+                        <div>
+                            <label htmlFor='agree_terms' className='flex items-center gap-2'>
+                            <Field
+                                type='checkbox'
+                                id='agree_terms'
+                                className={`${inter.className} form-checkbox `}
+                                name='agree_terms'
+                                placeholder='john@acme.com'
+                                onClick={ariaChecked}
+                                role='checkbox'
+                            />
+                            I accept the <Link href='/' className='-mx-1 text-indigo-600 hover:text-indigo-700'>Privacy Terms</Link> & <Link href='/' className='-mx-1 text-indigo-600 hover:text-indigo-700'>Terms of Service</Link>
+                            </label>
+                        </div>
+                    </fieldset>
+                    <button type='submit' className='bg-red-600 px-6 py-3 rounded-md text-white font-semibold block m-auto hover:bg-red-700 delay-100 duration-300 ease-in-out' aria-label='Submit button' role='button'>Submit</button>
+                </FormikForm>
+            </Formik>
         </main>
     )
 }
