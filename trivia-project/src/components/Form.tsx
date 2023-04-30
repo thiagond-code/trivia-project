@@ -64,8 +64,6 @@ export default function Form() {
         setChecked(prevState => !prevState)
     }
 
-    
-
     return (
         <main className='flex flex-col items-center gap-8'>
             <h1 className='text-3xl font-bold'>Sign up</h1>
@@ -99,6 +97,7 @@ export default function Form() {
                                 name='agree_terms'
                                 placeholder='john@acme.com'
                                 onClick={ariaChecked}
+                                checked={checked}
                                 role='checkbox'
                             />
                             I accept the <Link href='/' className='-mx-1 text-indigo-600 hover:text-indigo-700'>Privacy Terms</Link> & <Link href='/' className='-mx-1 text-indigo-600 hover:text-indigo-700'>Terms of Service</Link>
