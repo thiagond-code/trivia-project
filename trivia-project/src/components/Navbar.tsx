@@ -32,7 +32,7 @@ export const listLinks: Links = [
     }
 ]
 
-export const renderLinks = listLinks.map((link) => {
+export const renderLinks = listLinks.map(link => {
     return (
         <li key={link.label} className='hover:text-black/60 delay-100 duration-300'>
             <Link href={link.url}>{link.label}</Link>
