@@ -1,5 +1,6 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 import { inter } from '@/pages'
 import { Form as FormikForm, Field, Formik, useFormik } from 'formik'
 
@@ -57,6 +58,7 @@ const renderFields = listFields.map(field => {
 })
 
 export default function Form() {
+    const router = useRouter()
 
     const [checked, setChecked] = useState(false)
 
@@ -79,10 +81,8 @@ export default function Form() {
                 }
 
                 onSubmit={(values, actions) => {
-                    setTimeout(() => {
-                        alert(JSON.stringify(values, null, 2))
-                        actions.setSubmitting(false)
-                    }, 1000)
+                    localStorage.setItem('isUserLogged', 'true')
+                    router.push('/play')
                 }}
             >
                 <FormikForm className='flex flex-col gap-8' role='form'>

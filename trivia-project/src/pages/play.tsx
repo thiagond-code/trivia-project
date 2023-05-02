@@ -1,22 +1,22 @@
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import { useRouter } from "next/router"
 import { Form as FormikForm, Formik, Field } from "formik"
-import { inter } from "."
-
-const userLogged = true
+import { inter } from "@/pages"
+import { isPropertySignature } from "typescript"
 
 export default function Play() {
     const router = useRouter()
     
+    const [activate, setActivate] = useState(false)
+    
     useEffect(() => {
-        if (!userLogged) {
-            router.push('/signup')
-        }
+        const user = localStorage.getItem('isUserLogged') == 'true' 
+        if (!user) router.push('/signup')
     })
 
     return (
         <Formik
-            initialValues= {
+            initialValues={
                 { 
                     password: '', 
                 }
@@ -42,7 +42,7 @@ export default function Play() {
                         />
                     </div>
                 </div>
-                <button type='submit' className='bg-red-600 px-6 py-3 rounded-md text-white font-semibold block m-auto'>Submit</button>
+                <button type='submit' className='bg-red-600 px-6 py-3 rounded-md text-white font-semibold block m-auto disabled:bg-red-500 hover:bg-red-700 delay-100 duration-300 ease-in-out' disabled={activate}>Submit</button>
             </FormikForm>
         </Formik>
     )
