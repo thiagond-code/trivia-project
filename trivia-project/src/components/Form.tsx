@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { inter } from '@/pages'
 import { Form as FormikForm, Field, Formik, useFormik } from 'formik'
+import { inter } from '@/pages'
 
 
 type Field = {
@@ -15,7 +15,7 @@ type Field = {
 type Fields = Field[]
 
 
-const listFields = [
+export const listFields = [
     {
         label: 'First name',
         type: 'text',
