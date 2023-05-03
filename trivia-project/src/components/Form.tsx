@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { inter } from '@/pages'
 import { Form as FormikForm, Field, Formik, useFormik } from 'formik'
+import { inter } from '@/pages'
 
 
 type Field = {
@@ -15,7 +15,7 @@ type Field = {
 type Fields = Field[]
 
 
-const listFields = [
+export const listFields = [
     {
         label: 'First name',
         type: 'text',
@@ -105,6 +105,7 @@ export default function Form() {
                         </div>
                     </fieldset>
                     <button type='submit' className='bg-red-600 px-6 py-3 rounded-md text-white font-semibold block m-auto hover:bg-red-700 delay-100 duration-300 ease-in-out' aria-label='Submit button' role='button'>Submit</button>
+                    <p className='m-auto'>Are you already a quizzer? <Link href='/signup' className='text-blue-600 hover:underline'>Sign up</Link> now.</p>
                 </FormikForm>
             </Formik>
         </main>
