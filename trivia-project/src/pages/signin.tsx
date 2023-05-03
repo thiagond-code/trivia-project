@@ -42,19 +42,6 @@ export default function SignIn() {
     <FormikForm className='flex flex-col gap-8' role='form'>
         <fieldset className='flex flex-col gap-4'>
             {renderFields}    
-            <div>
-                <label htmlFor='agree_terms' className='flex items-center gap-2'>
-                <Field
-                    type='checkbox'
-                    id='agree_terms'
-                    className={`${inter.className} form-checkbox `}
-                    name='agree_terms'
-                    placeholder='john@acme.com'
-                    role='checkbox'
-                />
-                I accept the <Link href='/' className='-mx-1 text-indigo-600 hover:text-indigo-700'>Privacy Terms</Link> & <Link href='/' className='-mx-1 text-indigo-600 hover:text-indigo-700'>Terms of Service</Link>
-                </label>
-            </div>
         </fieldset>
         <button type='submit' className='bg-red-600 px-6 py-3 rounded-md text-white font-semibold block m-auto hover:bg-red-700 delay-100 duration-300 ease-in-out' aria-label='Submit button' role='button'>Submit</button>
     </FormikForm>
