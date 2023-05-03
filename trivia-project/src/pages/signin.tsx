@@ -6,9 +6,9 @@ import router from "next/router"
 
 const fields = listFields.slice(2)
 
-const renderFields = listFields.map(field => {
+const renderFields = fields.map(field => {
     return (
-        <div key={field.label} className='flex flex-col gap-2'>
+        <div key={field.label} className='flex flex-col m-auto gap-2'>
             <label className='font-semibold' htmlFor={field.accessibility}>{field.label}</label>
             <Field 
                 type={field.type}
@@ -26,11 +26,8 @@ export default function SignIn() {
     <Formik
     initialValues= {
         { 
-            name: '', 
             email: '',
-            phone_number: '',
             password: '',
-            agree_terms: false
         }
     }
 
