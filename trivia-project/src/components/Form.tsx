@@ -87,7 +87,7 @@ export default function Form() {
                         <div>
                             <label
                                 htmlFor="agree_terms"
-                                className="flex gap-2"
+                                className="flex items-center gap-2"
                             >
                                 <Field
                                     type="checkbox"
