@@ -8,7 +8,7 @@ const fields = listFields.slice(2)
 
 const renderFields = fields.map(field => {
     return (
-        <div key={field.label} className='flex flex-col m-auto gap-2'>
+        <div key={field.label} className='flex flex-col gap-2'>
             <label className='font-semibold' htmlFor={field.accessibility}>{field.label}</label>
             <Field 
                 type={field.type}
@@ -36,7 +36,8 @@ export default function SignIn() {
         router.push('/play')
     }}
 >
-    <FormikForm className='flex flex-col gap-8' role='form'>
+    <FormikForm className='flex flex-col items-center gap-8' role='form'>
+        <h1 className='text-3xl font-bold'>Sign in</h1>
         <fieldset className='flex flex-col gap-4'>
             {renderFields}    
         </fieldset>
