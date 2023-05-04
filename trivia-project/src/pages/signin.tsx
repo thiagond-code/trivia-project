@@ -1,4 +1,4 @@
-import { listFields } from '@/components/Form'
+import { listFields } from '@/pages/signup'
 import { Field, Formik, Form as FormikForm } from 'formik'
 import { inter } from '@/pages'
 import router from 'next/router'
