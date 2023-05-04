@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import { listLinks } from './Navbar'
 import { inter } from '@/pages/index'
-import { renderLinks } from './Navbar'
 import Facebook from '../../public/facebook.svg'
 import Instagram from '../../public/instagram.svg'
 import Whatsapp from '../../public/whatsapp.svg'
@@ -10,6 +10,17 @@ const date = new Date()
 const year = date.getFullYear()
 
 export default function Footer() {
+	const renderLinks = listLinks.map((link) => {
+		return (
+			<li
+				key={link.label}
+				className='hover:text-black/60 delay-100 duration-300'
+			>
+				<Link href={link.url}>{link.label}</Link>
+			</li>
+		)
+	})
+
 	return (
 		<footer className='container mx-auto'>
 			<div className='flex flex-col items-center mt-8 gap-4 md:items-start md:ml-8 2xl:ml-[88px]'>
