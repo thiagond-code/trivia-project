@@ -1,9 +1,9 @@
 'use client'
 
-import { Formik, Field, Form as FormikForm } from "formik"
+import { useState } from "react"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
-import { useState } from "react"
+import { Formik, Field, Form as FormikForm } from "formik"
 
 type Field = {
 	label: string
@@ -57,9 +57,8 @@ const renderFields = listFields.map((field) => {
 	)
 })
 
-export default function SignUp() {
+export default function SignUpForm() {
 	const router = useRouter()
-
 	const [checked, setChecked] = useState(false)
 
 	const ariaChecked = () => {
@@ -67,7 +66,7 @@ export default function SignUp() {
 	}
 
 	return (
-		<main className='flex flex-col items-center gap-8'>
+		<>
 			<h1 className='text-3xl font-bold'>Sign up</h1>
 			<Formik
 				initialValues={{
@@ -140,6 +139,6 @@ export default function SignUp() {
 					</p>
 				</FormikForm>
 			</Formik>
-		</main>
+		</>
 	)
 }

@@ -95,15 +95,13 @@ function Post(facts: Fact) {
 
 export default function TriviaFacts() {
 	return (
-		<main className='container mx-auto'>
-			<section className='flex flex-col items-center m-8 gap-12'>
-				<h1 className='text-3xl font-bold'>Trivia & Facts</h1>
-				<ul className='flex flex-col gap-8'>
-					{listFacts.map((fact) => {
-						return <Post key={fact.id} text={fact.text} />
-					})}
-				</ul>
-			</section>
-		</main>
+		<>
+			<h1 className='text-3xl font-bold'>Trivia & Facts</h1>
+			<ul className='flex flex-col gap-8'>
+				{listFacts.map((fact) => {
+					return <Post key={fact.id} text={fact.text} />
+				})}
+			</ul>
+		</>
 	)
 }

@@ -1,3 +1,5 @@
+import TriviaFacts from './facts'
+
 export default function FactsPage() {
-    return <div></div>
+    return <TriviaFacts />
 }

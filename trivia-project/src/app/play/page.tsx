@@ -1,5 +1,5 @@
-import Playpage from './hero'
+import Passcode from './passcode'
 
 export default function PlayPage() {
-    return <PlayPage />
+    return <Passcode />
 }

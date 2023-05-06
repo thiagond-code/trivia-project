@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { Form as FormikForm, Formik, Field } from 'formik'
 
-export default function Play() {
+export default function Passcode() {
 	const router = useRouter()
 
 	useEffect(() => {
