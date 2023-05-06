@@ -1,7 +1,8 @@
+'use client'
+
 import Image from 'next/image'
 import Link from 'next/link'
 import { listLinks } from './Navbar'
-import { inter } from '@/pages/index'
 import Facebook from '../../public/facebook.svg'
 import Instagram from '../../public/instagram.svg'
 import Whatsapp from '../../public/whatsapp.svg'
@@ -40,7 +41,7 @@ export default function Footer() {
 					{renderLinks}
 				</ul>
 			</nav>
-			<ul className={`${inter.className} flex justify-center gap-8`}>
+			<ul className={`flex justify-center gap-8`}>
 				<li>
 					<Link href='/'>
 						<Image src={Facebook} alt='Facebook' />

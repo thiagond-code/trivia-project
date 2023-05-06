@@ -1,7 +1,8 @@
-import { useRouter } from 'next/router'
+'use client'
+
+import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 import { Poppins } from 'next/font/google'
-import { inter } from '@/pages/index'
 
 type Link = {
 	label: string
@@ -36,21 +37,21 @@ export const listLinks: Links = [
 export const poppins = Poppins({ weight: '500', subsets: ['latin'] })
 
 export default function Navbar() {
-	const router = useRouter()
+	const router = usePathname()
 
 	const renderLinks = listLinks.map((link) => {
 		return (
 			<li
 				key={link.label}
 				className={`${
-					router.pathname === link.url &&
+					router === link.url &&
 					'cursor-not-allowed text-gray-400 hover:text-gray-400'
 				} hover:text-black/60 delay-100 duration-300`}
 			>
 				<Link
 					href={link.url}
 					className={`${
-						router.pathname === link.url && 'cursor-not-allowed'
+						router === link.url && 'cursor-not-allowed'
 					}`}
 				>
 					{link.label}

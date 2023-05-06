@@ -1,8 +1,9 @@
-import { useEffect, useState } from 'react'
-import Link from 'next/link'
-import { useRouter } from 'next/router'
-import { Form as FormikForm, Field, Formik, useFormik } from 'formik'
-import { inter } from '@/pages'
+'use client'
+
+import { Formik, Field, Form as FormikForm } from "formik"
+import Link from "next/link"
+import { useRouter } from "next/navigation"
+import { useState } from "react"
 
 type Field = {
 	label: string
@@ -48,7 +49,7 @@ const renderFields = listFields.map((field) => {
 			<Field
 				type={field.type}
 				id={field.accessibility}
-				className={`${inter.className} form-input border-slate-300 rounded-md invalid:border-red-600 invalid:ring-red-600`}
+				className={`form-input border-slate-300 rounded-md invalid:border-red-600 invalid:ring-red-600`}
 				name={field.accessibility}
 				placeholder={field.placeholder}
 			/>
@@ -95,7 +96,7 @@ export default function SignUp() {
 								<Field
 									type='checkbox'
 									id='agree_terms'
-									className={`${inter.className} form-checkbox`}
+									className={`form-checkbox`}
 									name='agree_terms'
 									placeholder='john@acme.com'
 									onClick={ariaChecked}

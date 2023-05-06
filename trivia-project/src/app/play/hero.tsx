@@ -1,7 +1,8 @@
+'use client'
+
 import { useEffect, useState } from 'react'
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/navigation'
 import { Form as FormikForm, Formik, Field } from 'formik'
-import { inter } from '@/pages'
 
 export default function Play() {
 	const router = useRouter()
@@ -27,7 +28,7 @@ export default function Play() {
 						<Field
 							type='text'
 							id='password'
-							className={`${inter.className} rounded-md border-slate-300`}
+							className={`rounded-md border-slate-300`}
 							name='password'
 							placeholder='Enter the code'
 						/>

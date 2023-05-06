@@ -1,5 +1,6 @@
+'use client'
+
 import { useState } from 'react'
-import { inter } from './index'
 
 type Fact = {
 	text: string
@@ -64,7 +65,7 @@ function Post(facts: Fact) {
 					</svg>
 				</div>
 				<div className='flex flex-col gap-4'>
-					<p className={`${inter.className}`}>{facts.text}</p>
+					<p className={``}>{facts.text}</p>
 					<button
 						onClick={updateLikes}
 						className='flex items-center gap-2 -ml-[4px]'
