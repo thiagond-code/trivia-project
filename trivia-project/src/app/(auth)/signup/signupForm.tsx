@@ -76,8 +76,9 @@ export default function SignUpForm() {
 					agree_terms: false,
 				}}
 				onSubmit={(values, actions) => {
+					actions.resetForm()
 					localStorage.setItem('isUserLogged', 'true')
-					router.push('/play')
+					router.push('/passcode')
 				}}
 			>
 				<FormikForm

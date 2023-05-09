@@ -38,7 +38,7 @@ export default function Login() {
 				onSubmit={(values, actions) => {
 					actions.resetForm()
 					localStorage.setItem('isUserLogged', 'true')
-					router.push('/play')
+					router.push('/passcode')
 				}}
 			>
 				<FormikForm
