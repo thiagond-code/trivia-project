@@ -1,9 +1,9 @@
 'use client'
 
-import { useState } from "react"
-import Link from "next/link"
-import { useRouter } from "next/navigation"
-import { Formik, Field, Form as FormikForm } from "formik"
+import { useState } from 'react'
+import Link from 'next/link'
+import { useRouter } from 'next/navigation'
+import { Formik, Field, Form as FormikForm } from 'formik'
 
 type Field = {
 	label: string
@@ -12,7 +12,7 @@ type Field = {
 	accessibility?: string
 }
 
-type Fields = Field[]
+export type Fields = Field[]
 
 export const listFields = [
 	{
@@ -49,7 +49,7 @@ const renderFields = listFields.map((field) => {
 			<Field
 				type={field.type}
 				id={field.accessibility}
-				className={`form-input border-slate-300 rounded-md invalid:border-red-600 invalid:ring-red-600`}
+				className={`form-input rounded-md border-slate-300 invalid:border-red-600 invalid:ring-red-600`}
 				name={field.accessibility}
 				placeholder={field.placeholder}
 			/>
@@ -67,7 +67,6 @@ export default function SignUpForm() {
 
 	return (
 		<>
-			<h1 className='text-3xl font-bold'>Sign up</h1>
 			<Formik
 				initialValues={{
 					name: '',
@@ -121,7 +120,7 @@ export default function SignUpForm() {
 					</fieldset>
 					<button
 						type='submit'
-						className='bg-red-600 px-6 py-3 rounded-md text-white font-semibold block m-auto hover:bg-red-700 delay-100 duration-300 ease-in-out'
+						className='m-auto block rounded-md bg-red-600 px-6 py-3 font-semibold text-white delay-100 duration-300 ease-in-out hover:bg-red-700'
 						aria-label='Submit button'
 						role='button'
 					>
@@ -130,10 +129,10 @@ export default function SignUpForm() {
 					<p>
 						Are you already a quizzer?{' '}
 						<Link
-							href='/signin'
+							href='/login'
 							className='text-blue-600 hover:underline'
 						>
-							Sign in
+							Log in
 						</Link>{' '}
 						now.
 					</p>

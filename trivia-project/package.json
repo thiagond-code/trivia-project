@@ -6,7 +6,8 @@
 		"dev": "next dev",
 		"build": "next build",
 		"start": "next start",
-		"lint": "next lint"
+		"lint": "next lint",
+		"format": "prettier --write \"./**/*.{js,jsx,ts,tsx,json}\""
 	},
 	"dependencies": {
 		"@tailwindcss/forms": "^0.5.3",

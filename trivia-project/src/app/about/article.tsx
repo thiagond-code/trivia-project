@@ -6,7 +6,7 @@ const today = date.getDate() + '/' + date.getMonth() + '/' + date.getFullYear()
 export default function AboutArticle() {
 	return (
 		<main className='flex flex-col items-center'>
-			<section className='flex flex-col prose mx-8'>
+			<section className='prose mx-8 flex flex-col'>
 				<article className='flex flex-col items-center'>
 					<h1>About the Quiz</h1>
 					<small className='-mt-4 mb-8'>Written in {today}</small>

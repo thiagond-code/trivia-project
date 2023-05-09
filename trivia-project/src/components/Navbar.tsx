@@ -46,13 +46,11 @@ export default function Navbar() {
 				className={`${
 					router === link.url &&
 					'cursor-not-allowed text-gray-400 hover:text-gray-400'
-				} hover:text-black/60 delay-100 duration-300`}
+				} delay-100 duration-300 hover:text-black/60`}
 			>
 				<Link
 					href={link.url}
-					className={`${
-						router === link.url && 'cursor-not-allowed'
-					}`}
+					className={`${router === link.url && 'cursor-not-allowed'}`}
 				>
 					{link.label}
 				</Link>
@@ -62,25 +60,25 @@ export default function Navbar() {
 
 	return (
 		<header className='container mx-auto'>
-			<div className='flex justify-between items-center m-8 overflow-hidden gap-8 xl:justify-around'>
+			<div className='m-8 flex items-center justify-between gap-8 overflow-hidden xl:justify-around'>
 				<Link href='/'>
-					<h1 className='text-3xl font-bold hover:text-black/60 delay-100 duration-300 ease-in-out'>
+					<h1 className='text-3xl font-bold delay-100 duration-300 ease-in-out hover:text-black/60'>
 						ProWorld
 					</h1>
 				</Link>
-				<nav className='hidden xl:block text-lg font-semibold'>
+				<nav className='hidden text-lg font-semibold xl:block'>
 					<ul className={`${poppins.className} flex gap-8`}>
 						{renderLinks}
 					</ul>
 				</nav>
-				<div className='hidden xl:block space-x-4'>
+				<div className='hidden space-x-4 xl:block'>
 					<Link href='/signup'>
-						<button className='bg-red-600 px-6 py-3 rounded-md text-white font-semibold hover:bg-red-700 delay-200 duration-300 ease-in-out'>
+						<button className='rounded-md bg-red-600 px-6 py-3 font-semibold text-white delay-200 duration-300 ease-in-out hover:bg-red-700'>
 							Sign up
 						</button>
 					</Link>
 					<Link href='/signin'>
-						<button className='bg-zinc-300 px-6 py-3 rounded-md text-black/50 font-semibold hover:bg-zinc-400 delay-200 duration-300 ease-in-out'>
+						<button className='rounded-md bg-zinc-300 px-6 py-3 font-semibold text-black/50 delay-200 duration-300 ease-in-out hover:bg-zinc-400'>
 							Sign in
 						</button>
 					</Link>
@@ -91,7 +89,7 @@ export default function Navbar() {
 					viewBox='0 0 24 24'
 					strokeWidth={1.5}
 					stroke='currentColor'
-					className='w-12 h-12 cursor-pointer xl:hidden'
+					className='h-12 w-12 cursor-pointer xl:hidden'
 				>
 					<path
 						strokeLinecap='round'

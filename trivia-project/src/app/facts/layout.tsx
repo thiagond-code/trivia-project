@@ -7,7 +7,7 @@ export default function FactsLayout({
 }) {
 	return (
 		<main className='container mx-auto'>
-			<section className='flex flex-col items-center m-8 gap-12'>
+			<section className='m-8 flex flex-col items-center gap-12'>
 				{children}
 			</section>
 		</main>

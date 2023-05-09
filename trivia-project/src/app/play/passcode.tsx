@@ -22,7 +22,7 @@ export default function Passcode() {
 			}}
 		>
 			<FormikForm className='flex flex-col justify-center gap-12'>
-				<div className='flex flex-col text-center gap-12'>
+				<div className='flex flex-col gap-12 text-center'>
 					<h1 className='text-3xl font-bold'>Let&apos;s play!</h1>
 					<div>
 						<Field
@@ -36,7 +36,7 @@ export default function Passcode() {
 				</div>
 				<button
 					type='submit'
-					className='bg-red-600 px-6 py-3 rounded-md text-white font-semibold block m-auto disabled:bg-red-500 hover:bg-red-700 delay-100 duration-300 ease-in-out'
+					className='m-auto block rounded-md bg-red-600 px-6 py-3 font-semibold text-white delay-100 duration-300 ease-in-out hover:bg-red-700 disabled:bg-red-500'
 				>
 					Submit
 				</button>

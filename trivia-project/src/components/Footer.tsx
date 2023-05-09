@@ -15,7 +15,7 @@ export default function Footer() {
 		return (
 			<li
 				key={link.label}
-				className='hover:text-black/60 delay-100 duration-300'
+				className='delay-100 duration-300 hover:text-black/60'
 			>
 				<Link href={link.url}>{link.label}</Link>
 			</li>
@@ -24,20 +24,20 @@ export default function Footer() {
 
 	return (
 		<footer className='container mx-auto'>
-			<div className='flex flex-col items-center mt-8 gap-4 md:items-start md:ml-8 2xl:ml-[88px]'>
+			<div className='mt-8 flex flex-col items-center gap-4 md:ml-8 md:items-start 2xl:ml-[88px]'>
 				<Link href='/'>
-					<h1 className='text-3xl font-bold hover:text-black/60 delay-100 duration-300 ease-in-out'>
+					<h1 className='text-3xl font-bold delay-100 duration-300 ease-in-out hover:text-black/60'>
 						ProWorld
 					</h1>
 				</Link>
-				<p className='text-sm text-center w-3/4 md:text-left lg:w-1/2'>
+				<p className='w-3/4 text-center text-sm md:text-left lg:w-1/2'>
 					Lorem ipsum dolor sit, amet consectetur adipisicing elit.
 					Fuga provident ducimus cum, at nisi eligendi iure officiis
 					nostrum odit impedit delectus quos rerum voluptatibus?
 				</p>
 			</div>
 			<nav>
-				<ul className='flex flex-col items-center mt-8 mb-12 gap-8 font-semibold md:flex-row md:ml-8 2xl:mx-[88px]'>
+				<ul className='mb-12 mt-8 flex flex-col items-center gap-8 font-semibold md:ml-8 md:flex-row 2xl:mx-[88px]'>
 					{renderLinks}
 				</ul>
 			</nav>
@@ -58,7 +58,7 @@ export default function Footer() {
 					</Link>
 				</li>
 			</ul>
-			<div className='flex flex-col text-center mt-8 gap-4'>
+			<div className='mt-8 flex flex-col gap-4 text-center'>
 				<span>ProWorld&reg; {year}</span>
 				<span>Made with ❤️, Thiago</span>
 			</div>

@@ -49,7 +49,7 @@ function Post(facts: Fact) {
 	return (
 		<div className='flex flex-col'>
 			<div className='flex items-center gap-2 md:items-start'>
-				<div className='flex w-16 h-16'>
+				<div className='flex h-16 w-16'>
 					<svg
 						xmlns='http://www.w3.org/2000/svg'
 						fill='#ffed00'
@@ -68,9 +68,9 @@ function Post(facts: Fact) {
 					<p className={``}>{facts.text}</p>
 					<button
 						onClick={updateLikes}
-						className='flex items-center gap-2 -ml-[4px]'
+						className='-ml-[4px] flex items-center gap-2'
 					>
-						<div className='w-8 h-8'>
+						<div className='h-8 w-8'>
 							<svg
 								xmlns='http://www.w3.org/2000/svg'
 								fill={`${isLiked ? `#ff0000` : 'none'}`}

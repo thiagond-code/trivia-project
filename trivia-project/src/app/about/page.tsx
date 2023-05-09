@@ -1,5 +1,5 @@
-import AboutArticle from "./article"
+import AboutArticle from './article'
 
 export default function AboutPage() {
-    return <AboutArticle />
+	return <AboutArticle />
 }

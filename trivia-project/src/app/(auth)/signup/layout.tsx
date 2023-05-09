@@ -1,13 +1,18 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-    title: 'Sign up'
+	title: 'Sign up',
 }
 
 export default function SignUpLayout({
-    children,
+	children,
 }: {
-    children: React.ReactNode,
+	children: React.ReactNode
 }) {
-    return <main className='flex flex-col items-center gap-8'>{children}</main>
+	return (
+		<>
+			<h1 className='text-3xl font-bold'>Sign up</h1>
+			{children}
+		</>
+	)
 }
