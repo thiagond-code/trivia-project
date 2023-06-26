@@ -1,5 +1,4 @@
 import type { Metadata } from 'next'
-import { ClerkProvider } from '@clerk/nextjs'
 import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
 import '@/styles/globals.css'
@@ -18,7 +17,6 @@ export default function RootLayout({
 	children: React.ReactNode
 }) {
 	return (
-		<ClerkProvider>
 			<html lang='pt-BR'>
 				<body>
 					<Navbar />
@@ -26,6 +24,5 @@ export default function RootLayout({
 					<Footer />
 				</body>
 			</html>
-		</ClerkProvider>
 	)
 }
